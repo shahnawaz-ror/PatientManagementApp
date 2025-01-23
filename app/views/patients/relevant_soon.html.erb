@@ -1,0 +1,32 @@
+<h1>Patients Relevant (Soon)</h1>
+
+<%= link_to "Back to All Patients", patients_path %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Date of Birth</th>
+      <th>Next Appointment</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @patients.each do |patient| %>
+      <tr>
+        <td><%= patient.name %></td>
+        <td><%= patient.date_of_birth %></td>
+        <td><%= patient.email %></td>
+        <td><%= patient.next_appointment_date || "N/A" %></td>
+        <td>
+          <%= link_to "Show", patient_path(patient) %>
+          <%= link_to "Edit", edit_patient_path(patient) %>
+          <%= button_to "Delete", patient_path(patient), method: :delete, data: { confirm: "Are you sure?" } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate @patients %>

@@ -1,0 +1,40 @@
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+  <div class="col-md-6 col-lg-4 p-4 border rounded shadow-lg">
+    <%= form_with(model: patient, class: 'patient-form') do |form| %>
+      <% if patient.errors.any? %>
+        <div class="alert alert-danger mb-3">
+          <ul>
+            <% patient.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="mb-4">
+        <%= form.label :name, class: 'form-label fw-bold' %>
+        <%= form.text_field :name, class: 'form-control rounded-pill p-2', placeholder: 'Enter Name' %>
+      </div>
+
+      <div class="mb-4">
+        <%= form.label :email, class: 'form-label fw-bold' %>
+        <%= form.text_field :email, class: 'form-control rounded-pill p-2', placeholder: 'Enter Email' %>
+      </div>
+
+      <div class="mb-4">
+        <%= form.label :date_of_birth, class: 'form-label fw-bold' %>
+        <%= form.date_field :date_of_birth, class: 'form-control rounded-pill p-2', placeholder: 'Enter Date of Birth' %>
+      </div>
+
+      <div class="mb-4">
+        <%= form.label :next_appointment, class: 'form-label fw-bold' %>
+        <%= form.datetime_local_field :next_appointment, class: 'form-control rounded-pill p-2', placeholder: 'Next Appointment (optional)' %>
+      </div>
+
+      <div class="d-flex justify-content-between">
+        <%= form.submit "Save", class: "btn btn-primary rounded-pill px-4 py-2" %>
+        <%= link_to 'Cancel', patients_path, class: 'btn btn-outline-secondary rounded-pill px-4 py-2' %>
+      </div>
+    <% end %>
+  </div>
+</div>

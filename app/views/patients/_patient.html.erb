@@ -1,0 +1,15 @@
+<div id="<%= dom_id(patient) %>" class="card p-3 mb-3" style="border: 1px solid #ddd; border-radius: 10px;">
+  <h5 class="mb-3">Patient Details</h5>
+  <div>
+    <strong>Name:</strong> <%= patient.name %>
+  </div>
+  <div>
+    <strong>Email:</strong> <%= patient.email %>
+  </div>
+  <div>
+    <strong>Date of Birth:</strong> <%= patient.date_of_birth %>
+  </div>
+  <div>
+    <strong>Next Appointment:</strong> <%= patient.next_appointment&.strftime('%Y-%m-%d') || 'N/A' %>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+// Import Bootstrap
+@import "bootstrap";
+
+// Include any additional global styles
+@import "custom"; // (optional - create app/assets/stylesheets/custom.scss for your styles)
+
+/*
+ * Any additional SCSS or CSS rules can go below this comment.
+ * Remember that application-wide styles should be added here for precedence.
+ */

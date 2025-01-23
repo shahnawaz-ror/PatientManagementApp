@@ -1,0 +1,11 @@
+<div class="container">
+  <h3><%= @patient.name%></h3>
+  <%= render "form", patient: @patient %>
+
+  <br>
+
+  <div>
+    <%= link_to "Show this patient", @patient %> |
+    <%= link_to "Back to patients", patients_path %>
+  </div>
+</div>
