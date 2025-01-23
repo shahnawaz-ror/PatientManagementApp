@@ -26,15 +26,17 @@ This is a Rails application that allows users to manage their patients, includin
 
 1. Clone the repository:
 
-   ```bash
-   git clone https://github.com/shahnawaz-ror/PatientManagementApp.git
-   cd PatientManagementApp
+```bash
+git clone https://github.com/shahnawaz-ror/PatientManagementApp.git
+cd PatientManagementApp
 ```
+
 2. Install dependencies:
 
-```
+```bash
 bundle install
 ```
+
 3. Set up the database:
 ```
 rails db:create
